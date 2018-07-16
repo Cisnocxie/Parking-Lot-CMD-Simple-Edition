@@ -6,10 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public class ParkingLot {
+    private String id;
+    private String name;
     private int size;
     private Map<Receipt, Car> carList;
 
-    public ParkingLot(int size) {
+    public ParkingLot(String id, String name, int size) {
+        this.id = id;
+        this.name = name;
         this.size = size;
         carList = new HashMap<Receipt, Car>();
     }
@@ -30,4 +34,16 @@ public class ParkingLot {
     public boolean isFull() {
         return carList.size() == size;
     }
+
+    public String getId() { return id;}
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Map<Receipt, Car> getCarList() { return carList; }
 }
