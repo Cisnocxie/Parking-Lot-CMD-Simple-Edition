@@ -20,14 +20,19 @@ public class Router {
                 break;
             case "rootpage":
                 chooseNextPage(controller.rootInterface());
+                break;
             case "manageorserve":
                 chooseNextPage(controller.manageOrServe(parameter));
+                break;
             case "printaddordelete":
                 chooseNextPage(controller.printAddOrDelete(parameter));
+                break;
             case "addparkinglot":
                 chooseNextPage(controller.addParkingLot(parameter));
+                break;
             case "deleteparkinglot":
                 chooseNextPage(controller.deleteParkingLot(parameter));
+                break;
         }
     }
 
