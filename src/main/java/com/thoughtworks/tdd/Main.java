@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Controller controller = new Controller(new ParkingLot(1));
-
+        Router router = new Router();
         while (true) {
-            controller.userInterface();
+            router.chooseNextPage("homepage");
         }
     }
 }
