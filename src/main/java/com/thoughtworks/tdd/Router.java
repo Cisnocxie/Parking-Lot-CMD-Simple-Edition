@@ -27,17 +27,14 @@ public class Router {
     public void chooseNextPage(String page) {
         switch (page) {
             case "homepage":
+            case "park":
                 forwardNextPage(page, null);
                 break;
             case "parkorunpark":
-                forwardNextPage(page, view.getInput());
-                break;
-            case "park":
-                forwardNextPage(page, null);
             case "canpark":
-                forwardNextPage(page, view.getInput());
             case "unpark":
                 forwardNextPage(page, view.getInput());
+                break;
         }
     }
 }
