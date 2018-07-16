@@ -15,7 +15,7 @@ public class Controller {
             view.showOutput("非法指令，请查证后再输");
             nextPage = "rootpage";
         } else if (input.equals("1")) {
-            nextPage = controlPark();
+            nextPage = "park";
         } else {
             view.showOutput("请输入小票编号：");
             nextPage = "unpark";
@@ -83,9 +83,9 @@ public class Controller {
             view.showOutput("非法指令，请查证后再输");
             nextPage = "rootpage";
         } else if (input.equals("1")) {
-            nextPage = userInterface();
+            nextPage = "servepage";
         } else {
-            nextPage = manageInterface();
+            nextPage = "managepage";
         }
         return nextPage;
     }
