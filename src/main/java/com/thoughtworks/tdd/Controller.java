@@ -1,12 +1,10 @@
 package com.thoughtworks.tdd;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.UUID;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Controller {
-    private ParkingLot parkingLot = new ParkingLot(1);
+    private ParkingBoy parkingBoy = new ParkingBoy(new ArrayList<ParkingLot>(Arrays.asList(new ParkingLot(1), new ParkingLot(1))));
     private Map<Receipt, String> receiptAndPlateNumber = new HashMap<>();
     private Map<String, Receipt> receiptNumberAndReceipt = new HashMap<>();
     private View view = new View();
@@ -28,7 +26,7 @@ public class Controller {
 
     public String controlPark() {
         String nextPage = null;
-        if (parkingLot.isFull()) {
+        if (parkingBoy.isFull()) {
             view.showOutput("车已停满，请晚点再来");
             nextPage = "homepage";
         } else {
@@ -40,7 +38,7 @@ public class Controller {
 
     public String genReceipt(String plateNumber) {
         Car car = new Car();
-        Receipt receipt = parkingLot.park(car);
+        Receipt receipt = parkingBoy.park(car);
         String receiptNumber = UUID.randomUUID().toString();
         receiptNumberAndReceipt.put(receiptNumber, receipt);
         receiptAndPlateNumber.put(receipt, plateNumber);
@@ -51,7 +49,7 @@ public class Controller {
     public String controlUnpark(String receiptNumber) {
         if (receiptNumberAndReceipt.get(receiptNumber) != null) {
             Receipt receipt = receiptNumberAndReceipt.remove(receiptNumber);
-            parkingLot.unpark(receipt);
+            parkingBoy.unpark(receipt);
             view.showOutput("车已取出，您的车牌号是: " + receiptAndPlateNumber.remove(receipt));
         } else {
             view.showOutput("非法小票，无法取出车，请查证后再输");

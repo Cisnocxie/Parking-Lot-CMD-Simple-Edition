@@ -1,16 +1,19 @@
 package com.thoughtworks.tdd;
 
-public class ParkingBoy {
-    private ParkingLot[] parkingLots;
+import java.util.Arrays;
+import java.util.List;
 
-    public ParkingBoy(ParkingLot[] parkingLots) {
+public class ParkingBoy {
+    private List<ParkingLot> parkingLots;
+
+    public ParkingBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
     }
 
     public Receipt park(Car car) {
-        for (int i = 0; i < parkingLots.length; i++) {
-            if (!parkingLots[i].isFull()) {
-                return parkingLots[i].park(car);
+        for (int i = 0; i < parkingLots.size(); i++) {
+            if (!parkingLots.get(i).isFull()) {
+                return parkingLots.get(i).park(car);
             }
         }
         throw new ParkingFullException();
@@ -23,5 +26,9 @@ public class ParkingBoy {
             if (car != null) break;
         }
         return car;
+    }
+
+    public boolean isFull() {
+        return parkingLots.stream().allMatch(ParkingLot::isFull);
     }
 }
