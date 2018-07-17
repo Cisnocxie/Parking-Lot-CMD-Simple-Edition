@@ -1,5 +1,7 @@
 package com.thoughtworks.tdd;
 
+import com.thoughtworks.tdd.core.ParkingLot;
+
 import java.util.List;
 import java.util.Scanner;
 

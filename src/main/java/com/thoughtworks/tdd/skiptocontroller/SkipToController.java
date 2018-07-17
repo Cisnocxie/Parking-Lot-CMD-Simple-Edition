@@ -1,4 +1,4 @@
-package com.thoughtworks.tdd.SkipToController;
+package com.thoughtworks.tdd.skiptocontroller;
 
 public interface SkipToController {
     String skip(String parameter);

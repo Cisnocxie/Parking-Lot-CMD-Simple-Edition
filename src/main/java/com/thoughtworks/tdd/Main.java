@@ -1,8 +1,6 @@
 package com.thoughtworks.tdd;
 
-import com.thoughtworks.tdd.SkipToController.*;
-
-import java.util.Scanner;
+import com.thoughtworks.tdd.skiptocontroller.*;
 
 public class Main {
     public static void main(String[] args) {

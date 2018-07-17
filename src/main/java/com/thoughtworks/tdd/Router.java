@@ -1,6 +1,6 @@
 package com.thoughtworks.tdd;
 
-import com.thoughtworks.tdd.SkipToController.SkipToController;
+import com.thoughtworks.tdd.skiptocontroller.SkipToController;
 
 import java.util.HashMap;
 import java.util.Map;

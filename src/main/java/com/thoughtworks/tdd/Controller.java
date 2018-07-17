@@ -1,6 +1,9 @@
 package com.thoughtworks.tdd;
 
-import java.lang.reflect.Array;
+import com.thoughtworks.tdd.core.Car;
+import com.thoughtworks.tdd.core.ParkingBoy;
+import com.thoughtworks.tdd.core.Receipt;
+
 import java.util.*;
 
 public class Controller {
