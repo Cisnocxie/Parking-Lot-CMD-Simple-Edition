@@ -1,17 +1,17 @@
-package com.thoughtworks.tdd.SkipToController;
+package com.thoughtworks.tdd.skiptocontroller;
 
 import com.thoughtworks.tdd.Controller;
 
-public class SkipToPrintAddOrDelete implements SkipToController {
+public class SkipToControlPark implements SkipToController {
     private Controller controller = new Controller();
     private boolean isNeedParam;
 
-    public SkipToPrintAddOrDelete(boolean isNeedParam) {
+    public SkipToControlPark(boolean isNeedParam) {
         this.isNeedParam = isNeedParam;
     }
 
     public String skip(String parameter) {
-        return controller.printAddOrDelete(parameter);
+        return controller.controlPark();
     }
 
     public boolean isNeedParam() {

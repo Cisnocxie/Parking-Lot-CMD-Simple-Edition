@@ -1,14 +1,18 @@
 package com.thoughtworks.tdd;
 
-import com.thoughtworks.tdd.SkipToController.SkipToController;
+import com.thoughtworks.tdd.request.Request;
+import com.thoughtworks.tdd.skiptocontroller.SkipToController;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Router {
-    private Controller controller = new Controller();
-    private View view = new View();
+    private Request request;
     private Map<String, SkipToController> URLMapping = new HashMap<>();
+
+    public Router(Request request) {
+        this.request = request;
+    }
 
     public void forwardNextPage(String page, String parameter) {
         chooseNextPage(URLMapping.get(page).skip(parameter));
@@ -20,7 +24,7 @@ public class Router {
 
     public void chooseNextPage(String page) {
         if (URLMapping.get(page).isNeedParam()) {
-            forwardNextPage(page, view.getInput());
+            forwardNextPage(page, request.getInput());
         } else {
             forwardNextPage(page, null);
         }

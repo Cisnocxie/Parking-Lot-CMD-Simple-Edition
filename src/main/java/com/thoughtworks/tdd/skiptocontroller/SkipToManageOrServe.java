@@ -1,17 +1,17 @@
-package com.thoughtworks.tdd.SkipToController;
+package com.thoughtworks.tdd.skiptocontroller;
 
 import com.thoughtworks.tdd.Controller;
 
-public class SkipToControlUnpark implements SkipToController {
+public class SkipToManageOrServe implements SkipToController {
     private Controller controller = new Controller();
     private boolean isNeedParam;
 
-    public SkipToControlUnpark(boolean isNeedParam) {
+    public SkipToManageOrServe(boolean isNeedParam) {
         this.isNeedParam = isNeedParam;
     }
 
     public String skip(String parameter) {
-        return controller.controlUnpark(parameter);
+        return controller.manageOrServe(parameter);
     }
 
     public boolean isNeedParam() {

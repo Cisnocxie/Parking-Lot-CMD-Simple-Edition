@@ -1,12 +1,11 @@
 package com.thoughtworks.tdd;
 
-import com.thoughtworks.tdd.SkipToController.*;
-
-import java.util.Scanner;
+import com.thoughtworks.tdd.request.CommandLineRequest;
+import com.thoughtworks.tdd.skiptocontroller.*;
 
 public class Main {
     public static void main(String[] args) {
-        Router router = new Router();
+        Router router = new Router(new CommandLineRequest());
         addURLMapping(router);
         while (true) {
             router.chooseNextPage("rootpage");
